@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Khánh Ly &amp; Tiến Dũng | Thiệp Cưới 25.10.2026</title>
+    <meta name="description" content="Trân trọng kính mời bạn chung vui cùng Khánh Ly & Tiến Dũng trong ngày trọng đại 25/10/2026.">
+    <meta property="og:title" content="Khánh Ly & Tiến Dũng | Thiệp Cưới 25.10.2026">
+    <meta property="og:description" content="Trân trọng kính mời bạn chung vui cùng chúng mình trong ngày hạnh phúc.">
+    <meta property="og:image" content="Anh/1.jpg">
+    <meta name="theme-color" content="#87232e">
+
+    <!-- CSS STYLESHEET CHÍNH -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HIỆU ỨNG CÁNH HOA RƠI LÃNG MẠN (CANVAS) -->
+    <canvas id="petalsCanvas" class="falling-petals-canvas" aria-hidden="true"></canvas>
+
+    <!-- TOAST THÔNG BÁO TIỆN ÍCH -->
+    <div id="toastNotice" class="toast-notice" role="status" aria-live="polite">Đã sao chép!</div>
+
+    <!-- ==========================================================================
+         1. MÀN HÌNH MỞ ĐẦU (HERO SECTION)
+         ========================================================================== -->
+    <section class="hero" id="hero">
+        <img src="Anh/1.jpg" alt="Ảnh cưới Khánh Ly và Tiến Dũng" class="hero-image" fetchpriority="high">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>Save The Date</span>
+            </div>
+
+            <div class="hero-names">
+                <h1>
+                    <span class="hero-name">Khánh Ly</span>
+                    <span class="hero-ampersand">&amp;</span>
+                    <span class="hero-name">Tiến Dũng</span>
+                </h1>
+            </div>
+
+            <div class="hero-divider">
+                <span></span>
+                <i>♡</i>
+                <span></span>
+            </div>
+
+            <div class="hero-date-block">
+                <p class="hero-date">25 · 10 · 2026</p>
+                <p class="hero-subtext">We're Getting Married</p>
+            </div>
+        </div>
+
+        <a href="#invitation" class="hero-scroll-btn" aria-label="Cuộn xuống xem thiệp mời">
+            <span>Khám phá</span>
+            <svg class="hero-scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </a>
+    </section>
+
+    <!-- ==========================================================================
+         2. PHẦN THIỆP MỜI CÁ NHÂN (INVITATION SECTION)
+         ========================================================================== -->
+    <section class="invitation-section" id="invitation">
+        <div class="container-sm">
+            <div class="invitation-card reveal">
+                <!-- Họa tiết góc thiệp cổ điển -->
+                <div class="card-corner card-corner-tl"></div>
+                <div class="card-corner card-corner-tr"></div>
+                <div class="card-corner card-corner-bl"></div>
+                <div class="card-corner card-corner-br"></div>
+
+                <p class="invitation-pretitle">WEDDING INVITATION</p>
+
+                <div class="invitation-seal" aria-hidden="true">
+                    <span>♡</span>
+                </div>
+
+                <p class="invitation-salute">TRÂN TRỌNG KÍNH MỜI</p>
+
+                <!-- Tên khách tự động cập nhật qua tham số ?guest=... -->
+                <h2 class="guest-name" id="guestName">Bạn và gia đình</h2>
+
+                <div class="invitation-line"></div>
+
+                <p class="invitation-message">
+                    Đến tham dự và chung vui cùng gia đình chúng tôi trong ngày trọng đại
+                </p>
+
+                <div class="invitation-couple">
+                    <h3>Khánh Ly <span>&amp;</span> Tiến Dũng</h3>
+                </div>
+
+                <p class="invitation-quote">
+                    “Hai người, một hành trình, một lời hẹn trọn đời.”
+                </p>
+
+                <div class="invitation-date-badge">
+                    <span>25 · 10 · 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. ẢNH ÁO DÀI ĐỎ (LOVE STORY BANNER)
+         ========================================================================== -->
+    <section class="love-photo-section">
+        <img src="Anh/9.jpg" alt="Khánh Ly và Tiến Dũng trong trang phục áo dài truyền thống" class="love-photo-img" loading="lazy">
+        <div class="love-photo-gradient"></div>
+
+        <div class="love-photo-card reveal">
+            <p class="love-tag">OUR LOVE STORY</p>
+            <h2>Về chung một nhà</h2>
+            <div class="love-quote-line"></div>
+            <p class="love-quote-text">
+                Từ hôm nay,<br>chúng mình gọi nhau là gia đình.
+            </p>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. ĐẾM NGƯỢC NGÀY CƯỚI (COUNTDOWN SECTION)
+         ========================================================================== -->
+    <section class="countdown-section">
+        <div class="container-sm">
+            <div class="section-header reveal">
+                <span class="section-tag">THE BIG DAY</span>
+                <div class="section-icon"><span>♡</span></div>
+                <h2 class="section-title">Đếm ngược đến ngày hạnh phúc</h2>
+                <p class="section-desc">
+                    Chỉ còn một chút nữa thôi, hành trình mới của chúng mình sẽ bắt đầu.
+                </p>
+            </div>
+
+            <!-- 4 Ô ĐẾM NGƯỢC -->
+            <div class="countdown-grid reveal">
+                <div class="countdown-box">
+                    <span class="countdown-num" id="days">00</span>
+                    <span class="countdown-label">NGÀY</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-num" id="hours">00</span>
+                    <span class="countdown-label">GIỜ</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-num" id="minutes">00</span>
+                    <span class="countdown-label">PHÚT</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-num" id="seconds">00</span>
+                    <span class="countdown-label">GIÂY</span>
+                </div>
+            </div>
+
+            <!-- Nút thêm vào Google Calendar -->
+            <div class="reveal" style="text-align: center;">
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=L%E1%BB%85+C%C6%B0%E1%BB%9Bi+Kh%C3%A1nh+Ly+%26+Ti%E1%BA%BFn+D%C5%A9ng&dates=20261025T000000Z/20261025T060000Z&details=Ti%E1%BB%87c+m%E1%BB%ABng+h%E1%BA%A1nh+ph%C3%BAc+Kh%C3%A1nh+Ly+%26+Ti%E1%BA%BFn+D%C5%A9ng&location=Khu+B%E1%BA%B1ng+Lu%C3%A2n%2C+x%C3%A3+B%E1%BA%B1ng+Lu%C3%A2n%2C+t%E1%BB%89nh+Ph%C3%BA+Th%E1%BB%8D"
+                   target="_blank" rel="noopener noreferrer" class="btn-calendar">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <span>Lưu ngày vào lịch</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. NGÀY CHUNG ĐÔI - THÔNG TIN GIA ĐÌNH & TIỆC CƯỚI
+         ========================================================================== -->
+    <section class="wedding-events-section" id="events">
+        <div class="container-sm">
+            <div class="section-header reveal">
+                <span class="section-tag">SAVE OUR DATE</span>
+                <div class="section-icon"><span>♡</span></div>
+                <h2 class="section-title">Ngày chung đôi</h2>
+                <p class="section-desc">
+                    Sự hiện diện của bạn là niềm vui và vinh hạnh to lớn của gia đình chúng tôi.
+                </p>
+            </div>
+
+            <!-- THÔNG TIN HAI BÊN GIA ĐÌNH -->
+            <div class="family-card reveal">
+                <p class="family-header">HAI BÊN GIA ĐÌNH</p>
+                <div class="family-grid">
+                    <div class="family-col">
+                        <p class="family-side-title">Nhà Gái</p>
+                        <div class="family-names">
+                            <p>Ông: <strong>Gioakim Nguyễn Hồng Khanh</strong></p>
+                            <p>Bà: <strong>Maria Cao Thanh Huyền</strong></p>
+                        </div>
+                    </div>
+                    <div class="family-col">
+                        <p class="family-side-title">Nhà Trai</p>
+                        <div class="family-names">
+                            <p>Ông: <strong>Giuse Nguyễn Anh Dương</strong></p>
+                            <p>Bà: <strong>Maria Cao Thị Quyên</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TIỆC CƯỚI NGÀY 25/10/2026 -->
+            <div class="ceremony-card reveal">
+                <p class="ceremony-invitation-tag">TRÂN TRỌNG KÍNH MỜI</p>
+                <h3 class="ceremony-heading">Tiệc mừng hạnh phúc</h3>
+
+                <div class="ceremony-datetime-badge">
+                    <span class="ceremony-weekday">Chủ Nhật</span>
+                    <strong class="ceremony-full-date">25 · 10 · 2026</strong>
+                    <span class="ceremony-time-badge">07:00 Sáng</span>
+                </div>
+
+                <p class="ceremony-location-label">BẮT ĐẦU TIỆC · TẠI GIA ĐÌNH NHÀ GÁI</p>
+                <p class="ceremony-address-text" id="ceremonyAddressText">
+                    Khu Bằng Luân, xã Bằng Luân, tỉnh Phú Thọ
+                </p>
+
+                <div class="ceremony-actions">
+                    <a href="https://maps.app.goo.gl/4daUHmaynHPbrW5w7" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                            <line x1="8" y1="2" x2="8" y2="18"></line>
+                            <line x1="16" y1="6" x2="16" y2="22"></line>
+                        </svg>
+                        <span>Xem chỉ đường Google Maps</span>
+                    </a>
+                    <button type="button" class="btn-secondary" id="copyAddressBtn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span>Sao chép địa chỉ</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ẢNH CHUYỂN CẢNH TRANG NHÃ -->
+            <div class="ceremony-interlude reveal">
+                <img src="Anh/7.jpg" alt="Khánh Ly và Tiến Dũng" class="ceremony-interlude-img" loading="lazy">
+                <div class="ceremony-interlude-overlay"></div>
+                <div class="ceremony-interlude-text">
+                    <span>♡</span>
+                    <p>Một ngày chung vui,<br>một đời bên nhau.</p>
+                    <small>Khánh Ly &amp; Tiến Dũng</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. ALBUM ẢNH CƯỚI (WEDDING GALLERY)
+         ========================================================================== -->
+    <section class="wedding-gallery" id="album-anh" aria-label="Album ảnh cưới theo 3 chương">
+        <div class="section-header reveal">
+            <span class="section-tag">OUR WEDDING ALBUM</span>
+            <div class="section-icon"><span>♡</span></div>
+            <h2 class="section-title">Những chương chuyện tình</h2>
+            <p class="section-desc">
+                Ba sắc màu, một tình yêu. Cùng nhìn lại những khoảnh khắc đáng nhớ của Khánh Ly &amp; Tiến Dũng.
+            </p>
+        </div>
+
+        <!-- CHƯƠNG 1: THE BEGINNING -->
+        <div class="story-album story-album--soft reveal">
+            <div class="story-album__heading">
+                <span class="story-album__tag">01 / THE BEGINNING</span>
+                <h3 class="story-album__title">Chuyện tình dịu dàng</h3>
+                <p class="story-album__desc">Những ngày bên nhau, mọi khoảnh khắc đều trở nên thật đẹp.</p>
+            </div>
+            <div class="story-album__grid">
+                <figure class="story-album__photo story-album__photo--feature gallery-item" data-index="0">
+                    <img src="Anh/1.jpg" alt="Khánh Ly & Tiến Dũng - Chuyện tình dịu dàng" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+                <figure class="story-album__photo gallery-item" data-index="1">
+                    <img src="Anh/2.jpg" alt="Khánh Ly & Tiến Dũng - Chuyện tình dịu dàng" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+                <figure class="story-album__photo gallery-item" data-index="2">
+                    <img src="Anh/3.jpg" alt="Khánh Ly & Tiến Dũng - Chuyện tình dịu dàng" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+                <figure class="story-album__photo gallery-item" data-index="3">
+                    <img src="Anh/4.jpg" alt="Khánh Ly & Tiến Dũng - Chuyện tình dịu dàng" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+                <figure class="story-album__photo gallery-item" data-index="4">
+                    <img src="Anh/5.jpg" alt="Khánh Ly & Tiến Dũng - Chuyện tình dịu dàng" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+            </div>
+        </div>
+
+        <!-- CHƯƠNG 2: TRADITIONAL LOVE -->
+        <div class="story-album story-album--red reveal">
+            <div class="story-album__heading">
+                <span class="story-album__tag">02 / TRADITIONAL LOVE</span>
+                <h3 class="story-album__title">Sắc đỏ ngày chung đôi</h3>
+                <p class="story-album__desc">Một chút sắc son, một lời hẹn ước, một đời thương nhau.</p>
+            </div>
+            <div class="story-album__grid">
+                <figure class="story-album__photo story-album__photo--feature gallery-item" data-index="5">
+                    <img src="Anh/6.jpg" alt="Khánh Ly & Tiến Dũng - Sắc đỏ ngày chung đôi" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+                <figure class="story-album__photo gallery-item" data-index="6">
+                    <img src="Anh/7.jpg" alt="Khánh Ly & Tiến Dũng - Sắc đỏ ngày chung đôi" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+                <figure class="story-album__photo gallery-item" data-index="7">
+                    <img src="Anh/8.jpg" alt="Khánh Ly & Tiến Dũng - Sắc đỏ ngày chung đôi" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+                <figure class="story-album__photo gallery-item" data-index="8">
+                    <img src="Anh/9.jpg" alt="Khánh Ly & Tiến Dũng - Sắc đỏ ngày chung đôi" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+                <figure class="story-album__photo gallery-item" data-index="9">
+                    <img src="Anh/10.jpg" alt="Khánh Ly & Tiến Dũng - Sắc đỏ ngày chung đôi" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+            </div>
+        </div>
+
+        <!-- CHƯƠNG 3: FOREVER BEGINS -->
+        <div class="story-album story-album--classic reveal">
+            <div class="story-album__heading">
+                <span class="story-album__tag">03 / FOREVER BEGINS</span>
+                <h3 class="story-album__title">Lời hẹn trăm năm</h3>
+                <p class="story-album__desc">Từ hôm nay, chúng mình cùng viết tiếp câu chuyện của hai người.</p>
+            </div>
+            <div class="story-album__grid">
+                <figure class="story-album__photo story-album__photo--feature gallery-item" data-index="10">
+                    <img src="Anh/11.jpg" alt="Khánh Ly & Tiến Dũng - Lời hẹn trăm năm" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+                <figure class="story-album__photo gallery-item" data-index="11">
+                    <img src="Anh/12.jpg" alt="Khánh Ly & Tiến Dũng - Lời hẹn trăm năm" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+                <figure class="story-album__photo gallery-item" data-index="12">
+                    <img src="Anh/13.jpg" alt="Khánh Ly & Tiến Dũng - Lời hẹn trăm năm" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+                <figure class="story-album__photo gallery-item" data-index="13">
+                    <img src="Anh/14.jpg" alt="Khánh Ly & Tiến Dũng - Lời hẹn trăm năm" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+                <figure class="story-album__photo gallery-item" data-index="14">
+                    <img src="Anh/15.jpg" alt="Khánh Ly & Tiến Dũng - Lời hẹn trăm năm" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+                <figure class="story-album__photo gallery-item" data-index="15">
+                    <img src="Anh/16.jpg" alt="Khánh Ly & Tiến Dũng - Lời hẹn trăm năm" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+                <figure class="story-album__photo gallery-item" data-index="16">
+                    <img src="Anh/17.jpg" alt="Khánh Ly & Tiến Dũng - Lời hẹn trăm năm" loading="lazy">
+                    <div class="photo-zoom-hint"><span>🔍</span></div>
+                </figure>
+            </div>
+        </div>
+
+        <div class="gallery-ending reveal">
+            <span class="gallery-ending-quote">“</span>
+            <p>Và rồi chúng ta<br>chọn ở bên nhau.</p>
+            <small>KHÁNH LY &amp; TIẾN DŨNG</small>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. HỘP MỪNG CƯỚI TỪ XA / LÌ XÌ YÊU THƯƠNG (ONLINE GIFT)
+         ========================================================================== -->
+    <section class="gift-section" id="gift">
+        <div class="container-sm">
+            <div class="section-header reveal">
+                <span class="section-tag">A LITTLE LOVE</span>
+                <div class="section-icon"><span>♡</span></div>
+                <h2 class="section-title">Gửi quà mừng hạnh phúc</h2>
+                <p class="section-desc">
+                    Sự hiện diện và những lời chúc yêu thương của bạn luôn là món quà quý giá nhất đối với chúng mình.
+                </p>
+            </div>
+
+            <div class="gift-card reveal">
+                <p style="font-size: 13px; color: var(--color-text-muted); line-height: 1.7;">
+                    Dành cho bạn bè và người thân ở xa muốn gửi lời chúc mừng và tình cảm đến cô dâu &amp; chú rể:
+                </p>
+
+                <!-- Mã QR Chuyển khoản -->
+                <div class="gift-qr-wrap">
+                    <img src="images-web/qr.jpg" alt="Mã QR mừng cưới của Khánh Ly" class="gift-qr-img" loading="lazy">
+                </div>
+
+                <!-- Thông tin Ngân hàng & Nút sao chép -->
+                <div class="bank-info">
+                    <p class="bank-name">Ngân hàng Quân Đội (MB Bank)</p>
+                    <p class="bank-account-num" id="bankAccountNum">0986534991</p>
+                    <p class="bank-account-holder">NGUYEN HUYEN KHANH LY</p>
+                </div>
+
+                <button type="button" class="btn-copy" id="copyBankBtn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>Sao chép số tài khoản</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         8. SỔ LƯU BÚT & XÁC NHẬN THAM DỰ (RSVP FORM)
+         ========================================================================== -->
+    <section class="rsvp-section" id="rsvp">
+        <div class="container-sm">
+            <div class="section-header reveal">
+                <span class="section-tag">SHARE THE LOVE</span>
+                <div class="section-icon"><span>♡</span></div>
+                <h2 class="section-title">Gửi lời chúc &amp; Xác nhận</h2>
+                <p class="section-desc">
+                    Sự hiện diện và những lời chúc của bạn sẽ làm ngày vui của chúng mình thêm phần trọn vẹn.
+                </p>
+            </div>
+
+            <div class="rsvp-card reveal">
+                <form id="rsvpForm" novalidate>
+                    <!-- HỌ TÊN -->
+                    <div class="rsvp-form-group">
+                        <label for="rsvpName" class="rsvp-label">Tên của bạn *</label>
+                        <input type="text" id="rsvpName" class="rsvp-input" placeholder="Nhập tên hoặc biệt danh của bạn" required>
+                    </div>
+
+                    <!-- MỐI QUAN HỆ -->
+                    <div class="rsvp-form-group">
+                        <label class="rsvp-label">Bạn là khách của... *</label>
+                        <div class="rsvp-options-grid">
+                            <label class="rsvp-option">
+                                <input type="radio" name="relationship" value="bride">
+                                <span class="rsvp-option-box">Bạn Cô dâu</span>
+                            </label>
+                            <label class="rsvp-option">
+                                <input type="radio" name="relationship" value="groom">
+                                <span class="rsvp-option-box">Bạn Chú rể</span>
+                            </label>
+                            <label class="rsvp-option">
+                                <input type="radio" name="relationship" value="both">
+                                <span class="rsvp-option-box">Bạn Cả hai</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- XÁC NHẬN THAM DỰ -->
+                    <div class="rsvp-form-group">
+                        <label class="rsvp-label">Bạn sẽ tham dự chung vui chứ? *</label>
+                        <div class="rsvp-options-grid-2">
+                            <label class="rsvp-option">
+                                <input type="radio" name="attendance" value="yes">
+                                <span class="rsvp-option-box">♡ Mình sẽ tham dự</span>
+                            </label>
+                            <label class="rsvp-option">
+                                <input type="radio" name="attendance" value="no">
+                                <span class="rsvp-option-box">Gửi chúc từ xa</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- LỜI CHÚC -->
+                    <div class="rsvp-form-group">
+                        <label for="rsvpMessage" class="rsvp-label">Lời chúc gửi đến cặp đôi</label>
+                        <textarea id="rsvpMessage" class="rsvp-textarea" placeholder="Gửi gắm đôi dòng chúc phúc ngọt ngào đến Khánh Ly & Tiến Dũng..."></textarea>
+                    </div>
+
+                    <!-- THÔNG BÁO LỖI -->
+                    <div class="rsvp-status-msg" id="rsvpError" role="alert"></div>
+
+                    <!-- NÚT GỬI -->
+                    <button type="button" class="btn-submit" id="rsvpButton">
+                        <span>GỬI LỜI CHÚC ♡</span>
+                    </button>
+
+                    <!-- THÔNG BÁO THÀNH CÔNG -->
+                    <div class="rsvp-success-card" id="rsvpSuccess">
+                        <div class="rsvp-success-icon">♡</div>
+                        <h4>Đã nhận được lời chúc của bạn</h4>
+                        <p>Cảm ơn bạn đã luôn yêu thương và chung vui cùng Khánh Ly &amp; Tiến Dũng!</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         9. KẾT THIỆP (WEDDING ENDING)
+         ========================================================================== -->
+    <section class="wedding-ending-section">
+        <img src="Anh/10.jpg" alt="Khánh Ly và Tiến Dũng" class="ending-bg-img" loading="lazy">
+        <div class="ending-gradient"></div>
+
+        <div class="ending-content reveal">
+            <p class="ending-tag">THANK YOU</p>
+            <div class="ending-heart">♡</div>
+            <p class="ending-msg">
+                Cảm ơn bạn đã dành thời gian quý báu<br>chung vui trong ngày hạnh phúc nhất của chúng mình.
+            </p>
+            <h2 class="ending-couple-names">Khánh Ly &amp; Tiến Dũng</h2>
+            <p class="ending-date">25 · 10 · 2026</p>
+            <p class="ending-footer-text">See you at our wedding</p>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         10. LIGHTBOX MODAL (XEM ẢNH FULL MÀN HÌNH)
+         ========================================================================== -->
+    <div id="lightboxModal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Xem ảnh phóng to">
+        <button type="button" class="lightbox-btn lightbox-close" id="lightboxClose" aria-label="Đóng ảnh">✕</button>
+        <button type="button" class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Ảnh trước">‹</button>
+        <button type="button" class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Ảnh sau">›</button>
+
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightboxImg">
+        </div>
+        <div class="lightbox-counter" id="lightboxCounter">1 / 17</div>
+    </div>
+
+    <!-- ==========================================================================
+         11. NHẠC NỀN & FLOATING CONTROLS
+         ========================================================================== -->
+    <audio id="weddingMusic" loop preload="auto">
+        <source src="nhac.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="floating-dock">
+        <!-- NÚT LÊN ĐẦU TRANG -->
+        <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Cuộn lên đầu trang">
+            ▲
+        </button>
+
+        <!-- NÚT BẬT / TẮT NHẠC (ĐĨA QUAY) -->
+        <button type="button" class="music-toggle-btn" id="musicButton" aria-label="Bật hoặc tắt nhạc cưới" title="Bật/Tắt nhạc">
+            ♫
+        </button>
+    </div>
+
+    <!-- SCRIPT CHÍNH -->
+    <script src="script.js"></script>
+</body>
+</html>
