@@ -100,15 +100,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const musicButton = document.getElementById("musicButton");
 
     if (weddingMusic && musicButton) {
-        weddingMusic.volume = 0.5;
+        weddingMusic.volume = 0.55;
 
         async function playMusic() {
             try {
                 await weddingMusic.play();
                 musicButton.classList.add("playing");
+                musicButton.classList.remove("pulse-hint");
+                cleanupInteractionListeners();
             } catch (err) {
                 // Trình duyệt chặn autoplay khi chưa có tương tác người dùng
                 musicButton.classList.remove("playing");
+                musicButton.classList.add("pulse-hint");
             }
         }
 
@@ -117,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
             musicButton.classList.remove("playing");
         }
 
-        // Thử phát tự động
+        // Thử phát ngay lập tức khi load trang
         playMusic();
 
         // Nút bấm bật / tắt nhạc
@@ -130,19 +133,40 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Kích hoạt phát nhạc ở lần tương tác đầu tiên nếu bị trình duyệt chặn
+        // Bắt mọi tương tác đầu tiên (chạm, click, cuộn...) để phát nhạc ngay lập tức nếu bị chặn
+        const userEvents = ["click", "touchstart", "touchend", "pointerdown", "scroll", "keydown", "wheel"];
         const triggerMusicOnFirstInteraction = () => {
             if (weddingMusic.paused) {
                 playMusic();
             }
-            window.removeEventListener("click", triggerMusicOnFirstInteraction);
-            window.removeEventListener("touchstart", triggerMusicOnFirstInteraction);
-            window.removeEventListener("scroll", triggerMusicOnFirstInteraction);
+            cleanupInteractionListeners();
         };
 
-        window.addEventListener("click", triggerMusicOnFirstInteraction, { once: true });
-        window.addEventListener("touchstart", triggerMusicOnFirstInteraction, { once: true });
-        window.addEventListener("scroll", triggerMusicOnFirstInteraction, { once: true });
+        function cleanupInteractionListeners() {
+            userEvents.forEach(evt => {
+                window.removeEventListener(evt, triggerMusicOnFirstInteraction, { capture: true });
+                document.removeEventListener(evt, triggerMusicOnFirstInteraction, { capture: true });
+            });
+        }
+
+        userEvents.forEach(evt => {
+            window.addEventListener(evt, triggerMusicOnFirstInteraction, { capture: true, once: true, passive: true });
+            document.addEventListener(evt, triggerMusicOnFirstInteraction, { capture: true, once: true, passive: true });
+        });
+    }
+
+    // ==========================================================================
+    // 4.1. HỘP MỪNG CƯỚI TƯƠNG TÁC (CHẠM ĐỂ MỞ / ĐÓNG MÃ QR)
+    // ==========================================================================
+    const giftToggleBtn = document.getElementById("giftToggleBtn");
+    const giftDropdownContent = document.getElementById("giftDropdownContent");
+
+    if (giftToggleBtn && giftDropdownContent) {
+        giftToggleBtn.addEventListener("click", () => {
+            const isOpen = giftDropdownContent.classList.toggle("open");
+            giftToggleBtn.classList.toggle("active", isOpen);
+            giftToggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
     }
 
     // ==========================================================================
@@ -187,7 +211,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Nút sao chép địa chỉ tiệc cưới
+    // Nút sao chép địa chỉ tiệc cưới (Nhà Gái & Nhà Trai)
+    const copyAddressBrideBtn = document.getElementById("copyAddressBrideBtn");
+    if (copyAddressBrideBtn) {
+        copyAddressBrideBtn.addEventListener("click", () => {
+            copyText("Khu Bằng Luân, xã Bằng Luân, tỉnh Phú Thọ", "Đã sao chép địa chỉ Nhà Gái ♡");
+        });
+    }
+
+    const copyAddressGroomBtn = document.getElementById("copyAddressGroomBtn");
+    if (copyAddressGroomBtn) {
+        copyAddressGroomBtn.addEventListener("click", () => {
+            copyText("Xã Tây Cốc, tỉnh Phú Thọ", "Đã sao chép địa chỉ Nhà Trai ♡");
+        });
+    }
+
+    // Fallback cho nút sao chép cũ nếu có
     const copyAddressBtn = document.getElementById("copyAddressBtn");
     if (copyAddressBtn) {
         copyAddressBtn.addEventListener("click", () => {
