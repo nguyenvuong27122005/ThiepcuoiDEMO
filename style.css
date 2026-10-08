@@ -728,6 +728,40 @@ button, input, textarea {
     text-transform: uppercase;
 }
 
+.family-parents {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 6px;
+}
+
+.family-parent-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.35;
+}
+
+.family-saint-name {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    font-style: italic;
+    color: var(--color-gold-dark);
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+.family-full-name {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-heading);
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+    margin-top: 2px;
+}
+
+/* Fallback class cho cấu trúc cũ */
 .family-names {
     font-family: var(--font-serif);
     font-size: 16px;
@@ -772,10 +806,30 @@ button, input, textarea {
 
 .ceremony-heading {
     font-family: var(--font-serif);
-    font-size: clamp(30px, 5vw, 40px);
     font-style: italic;
     color: var(--color-primary-dark);
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.ceremony-heading-main {
+    font-size: clamp(26px, 4.8vw, 36px);
+    font-weight: 500;
+    line-height: 1.25;
+    white-space: nowrap;
+    color: var(--color-primary-dark);
+}
+
+.ceremony-heading-side {
+    font-size: clamp(24px, 4.4vw, 34px);
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+    color: var(--color-primary);
 }
 
 .ceremony-datetime-badge {
@@ -808,10 +862,11 @@ button, input, textarea {
 
 .ceremony-time-badge {
     font-family: var(--font-serif);
-    font-size: 22px;
+    font-size: clamp(17px, 3.8vw, 22px);
     font-style: italic;
     color: var(--color-gold-dark);
     margin-top: 4px;
+    white-space: nowrap;
 }
 
 .ceremony-location-label {
@@ -829,6 +884,11 @@ button, input, textarea {
     color: var(--color-text-muted);
     max-width: 380px;
     margin: 0 auto 24px;
+}
+
+.ceremony-address-text span {
+    display: block;
+    white-space: nowrap;
 }
 
 /* NÚT BẢN ĐỒ VÀ SAO CHÉP */
@@ -1980,12 +2040,36 @@ button, input, textarea {
         letter-spacing: 1px;
     }
 
+    .family-card {
+        padding: 28px 12px 24px;
+    }
+
     .family-grid {
-        gap: 12px;
+        gap: 8px;
+    }
+
+    .family-col {
+        padding: 0 2px;
     }
 
     .family-side-title {
         font-size: 11px;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+
+    .family-parents {
+        gap: 10px;
+    }
+
+    .family-saint-name {
+        font-size: 11px !important;
+        white-space: nowrap !important;
+    }
+
+    .family-full-name {
+        font-size: 13px !important;
+        white-space: nowrap !important;
     }
 
     .family-names {
@@ -1997,6 +2081,21 @@ button, input, textarea {
         padding: 32px 14px;
     }
 
+    .ceremony-heading {
+        gap: 2px;
+        margin-bottom: 18px;
+    }
+
+    .ceremony-heading-main {
+        font-size: 25px !important;
+        white-space: nowrap !important;
+    }
+
+    .ceremony-heading-side {
+        font-size: 23px !important;
+        white-space: nowrap !important;
+    }
+
     .ceremony-datetime-badge {
         padding: 12px 18px;
     }
@@ -2006,7 +2105,18 @@ button, input, textarea {
     }
 
     .ceremony-time-badge {
-        font-size: 19px;
+        font-size: 16px !important;
+        white-space: nowrap !important;
+    }
+
+    .ceremony-address-text {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .ceremony-address-text span {
+        display: block;
+        white-space: nowrap;
     }
 
     .ceremony-interlude {
@@ -2061,6 +2171,26 @@ button, input, textarea {
 
     .countdown-num {
         font-size: 24px;
+    }
+
+    .family-saint-name {
+        font-size: 10px !important;
+    }
+
+    .family-full-name {
+        font-size: 11.5px !important;
+    }
+
+    .ceremony-heading-main {
+        font-size: 22px !important;
+    }
+
+    .ceremony-heading-side {
+        font-size: 20px !important;
+    }
+
+    .ceremony-time-badge {
+        font-size: 14px !important;
     }
 
     .family-names {
