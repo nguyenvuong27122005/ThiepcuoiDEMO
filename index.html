@@ -11,7 +11,7 @@
     <meta name="theme-color" content="#87232e">
 
     <!-- CSS STYLESHEET CHÍNH -->
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -98,12 +98,31 @@
                     </h3>
                 </div>
 
-                <p class="invitation-quote">
-                    “Hai người, một hành trình, một lời hẹn trọn đời.”
-                </p>
+                <!-- CÂU KINH THÁNH HÔN PHỐI -->
+                <div class="invitation-scripture-wrap">
+                    <p class="invitation-scripture-text">
+                        “Tôi thuộc về người tôi yêu,<br>và người tôi yêu thuộc về tôi”
+                    </p>
+                    <span class="invitation-scripture-ref">(Dc 6,3)</span>
+                </div>
+
+                <!-- THÔNG TIN THÁNH LỄ HÔN PHỐI TRÊN THIỆP MỜI -->
+                <div class="invitation-sacrament-card">
+                    <div class="sacrament-card-badge">
+                        <span class="sacrament-card-cross">✝</span>
+                        <span class="sacrament-card-tag">THÁNH LỄ HÔN PHỐI</span>
+                    </div>
+                    <p class="sacrament-card-time">
+                        Vào hồi <strong>19:30</strong> · Thứ Sáu, <strong>16 · 10 · 2026</strong>
+                    </p>
+                    <p class="sacrament-card-church">
+                        Tại Nhà thờ Giáo xứ Đồng Đam
+                    </p>
+                </div>
 
                 <div class="invitation-date-badge">
-                    <span>25 · 10 · 2026</span>
+                    <span class="date-badge-label">TIỆC MỪNG HẠNH PHÚC</span>
+                    <strong class="date-badge-num">25 · 10 · 2026</strong>
                 </div>
             </div>
         </div>
@@ -220,6 +239,52 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- THÁNH LỄ HÔN PHỐI (LÃNH NHẬN BÍ TÍCH HÔN PHỐI TẠI THÁNH ĐƯỜNG) -->
+            <div class="ceremony-card ceremony-card--church reveal">
+                <div class="church-cross-badge" aria-hidden="true">✝</div>
+                <p class="ceremony-invitation-tag">HIỆP Ý CẦU NGUYỆN &amp; THAM DỰ</p>
+                <h3 class="ceremony-heading">
+                    <span class="ceremony-heading-main">Thánh Lễ Hôn Phối</span>
+                    <span class="ceremony-heading-side">Giáo xứ Đồng Đam</span>
+                </h3>
+
+                <!-- CÂU KINH THÁNH NỔI BẬT -->
+                <div class="church-scripture-quote">
+                    <p class="church-scripture-verse">“Tôi thuộc về người tôi yêu,<br>và người tôi yêu thuộc về tôi”</p>
+                    <span class="church-scripture-ref">(Dc 6,3)</span>
+                </div>
+
+                <div class="ceremony-datetime-badge ceremony-datetime-badge--gold">
+                    <span class="ceremony-weekday">Thứ Sáu</span>
+                    <strong class="ceremony-full-date">16 · 10 · 2026</strong>
+                    <span class="ceremony-time-badge">19:30 Tối</span>
+                </div>
+
+                <p class="ceremony-location-label">THÁNH ĐƯỜNG GIÁO XỨ ĐỒNG ĐAM</p>
+                <p class="ceremony-address-text" id="ceremonyChurchAddress">
+                    <span>Nhà thờ Giáo xứ Đồng Đam, xã Bằng Luân,</span>
+                    <span>huyện Đoan Hùng, tỉnh Phú Thọ</span>
+                </p>
+
+                <div class="ceremony-actions">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0+th%E1%BB%9D+Gi%C3%A1o+x%E1%BB%A9+%C4%90%E1%BB%93ng+%C4%90am%2C+B%E1%BA%B1ng+Lu%C3%A2n%2C+%C4%90oan+H%C3%B9ng%2C+Ph%C3%BA+Th%E1%BB%8D" target="_blank" rel="noopener noreferrer" class="btn-primary btn-church">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                            <line x1="8" y1="2" x2="8" y2="18"></line>
+                            <line x1="16" y1="6" x2="16" y2="22"></line>
+                        </svg>
+                        <span>Chỉ đường Nhà thờ (Google Maps)</span>
+                    </a>
+                    <button type="button" class="btn-secondary" id="copyAddressChurchBtn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span>Sao chép địa chỉ</span>
+                    </button>
                 </div>
             </div>
 
