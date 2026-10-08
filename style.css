@@ -460,23 +460,33 @@ button, input, textarea {
 }
 
 .invitation-couple {
-    margin-top: 10px;
+    margin: 14px auto 16px;
 }
 
-.invitation-couple h3 {
+.invitation-couple-names {
     font-family: var(--font-script);
-    font-size: clamp(38px, 8vw, 54px);
+    font-size: clamp(38px, 6vw, 52px);
     font-weight: 400;
     color: var(--color-text-heading);
     line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 }
 
-.invitation-couple h3 span {
+.invitation-couple-names .couple-name {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.invitation-couple-names .couple-amp {
     font-family: var(--font-serif);
     font-size: 24px;
     font-style: italic;
     color: var(--color-gold-dark);
-    margin: 0 8px;
+    margin: 0;
+    line-height: 1;
 }
 
 .invitation-quote {
@@ -1642,6 +1652,23 @@ button, input, textarea {
     color: #ffffff;
     margin-bottom: 16px;
     text-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.ending-couple-names .couple-name {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.ending-couple-names .couple-amp {
+    font-family: var(--font-serif);
+    font-size: clamp(24px, 4vw, 32px);
+    font-style: italic;
+    color: var(--color-gold-light);
+    line-height: 1;
 }
 
 .ending-date {
@@ -1839,6 +1866,52 @@ button, input, textarea {
     }
 }
 
+/* Điện thoại di động & màn hình hẹp: mỗi người 1 dòng trang nhã, không bao giờ ngắt chữ */
+@media (max-width: 640px) {
+    .invitation-couple {
+        margin: 14px auto 16px;
+    }
+
+    .invitation-couple-names {
+        flex-direction: column !important;
+        gap: 0 !important;
+        font-size: 38px !important;
+        line-height: 1.15 !important;
+    }
+
+    .invitation-couple-names .couple-name {
+        display: block !important;
+        white-space: nowrap !important;
+    }
+
+    .invitation-couple-names .couple-amp {
+        display: block !important;
+        font-size: 20px !important;
+        margin: 2px 0 4px !important;
+        color: var(--color-gold-dark) !important;
+        line-height: 1 !important;
+        opacity: 0.95;
+    }
+
+    .ending-couple-names {
+        flex-direction: column !important;
+        gap: 0 !important;
+        font-size: 42px !important;
+        line-height: 1.15 !important;
+    }
+
+    .ending-couple-names .couple-name {
+        display: block !important;
+        white-space: nowrap !important;
+    }
+
+    .ending-couple-names .couple-amp {
+        display: block !important;
+        font-size: 22px !important;
+        margin: 2px 0 4px !important;
+    }
+}
+
 /* Điện thoại di động (iPhone, Samsung...) */
 @media (max-width: 540px) {
     .hero {
@@ -1976,6 +2049,14 @@ button, input, textarea {
 
     .guest-name {
         font-size: 38px;
+    }
+
+    .invitation-couple-names {
+        font-size: 33px !important;
+    }
+
+    .ending-couple-names {
+        font-size: 36px !important;
     }
 
     .countdown-num {
